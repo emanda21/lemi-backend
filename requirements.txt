@@ -18,4 +18,4 @@ pydantic==2.7.4
 #   pip install tensorflow==2.16.2          (GPU / any platform)
 #   pip install tensorflow-cpu==2.16.2      (CPU-only, smaller download)
 #
-# tensorflow==2.16.2
+ tensorflow==2.16.2
