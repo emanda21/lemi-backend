@@ -3,6 +3,8 @@ fastapi==0.111.1
 uvicorn[standard]==0.30.1
 python-multipart==0.0.9
 tensorflow-hub
+setuptools
+packaging
 
 # ─── Image processing (always required) ───────────────────────────────────────
 pillow==10.3.0
@@ -18,4 +20,4 @@ pydantic==2.7.4
 #   pip install tensorflow==2.16.2          (GPU / any platform)
 #   pip install tensorflow-cpu==2.16.2      (CPU-only, smaller download)
 #
-# tensorflow==2.16.2
+ tensorflow==2.16.2
