@@ -3,6 +3,7 @@ fastapi==0.111.1
 uvicorn[standard]==0.30.1
 python-multipart==0.0.9
 tensorflow-hub
+setuptools
 
 # ─── Image processing (always required) ───────────────────────────────────────
 pillow==10.3.0
