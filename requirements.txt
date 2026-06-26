@@ -1,0 +1,20 @@
+# ─── Core API ─────────────────────────────────────────────────────────────────
+fastapi==0.111.1
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+
+# ─── Image processing (always required) ───────────────────────────────────────
+pillow==10.3.0
+numpy==1.26.4
+
+# ─── Data validation ──────────────────────────────────────────────────────────
+pydantic==2.7.4
+
+# ─── ML (only needed when using the real .h5 model) ───────────────────────────
+# The backend runs in DEMO MODE without TensorFlow installed.
+# Install one of the lines below only when you have the model file:
+#
+#   pip install tensorflow==2.16.2          (GPU / any platform)
+#   pip install tensorflow-cpu==2.16.2      (CPU-only, smaller download)
+#
+# tensorflow==2.16.2
