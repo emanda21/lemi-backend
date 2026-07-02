@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4: class-based dark mode ───────────────────────────────────── */
+/* This single line makes ALL dark:* utility classes work when .dark is on <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --green-forest: #1a3a2a;
+  --green-mid: #2d5a3d;
+  --green-accent: #4ade80;
+  --lime-accent: #a3e635;
+  --bg-light: #f4f7f0;
+  --bg-dark: #111827;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans Ethiopic', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--bg-light);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark body override — triggered when .dark is on <html> */
+.dark body {
+  background: var(--bg-dark);
+  color: #f3f4f6;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #4ade80; border-radius: 3px; }
+.dark ::-webkit-scrollbar-track { background: #1f2937; }
+.dark ::-webkit-scrollbar-thumb { background: #16a34a; }
+
+/* Glassmorphism helpers */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.glass-input::placeholder { color: rgba(255, 255, 255, 0.55); }
+.glass-input:focus {
+  border-color: rgba(74, 222, 128, 0.8);
+  background: rgba(255, 255, 255, 0.12);
+}
+.dark .glass-input {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255,255,255,0.15);
+}
+
+/* Scan corner animation */
+@keyframes pulse-scan {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.scan-corner { animation: pulse-scan 2s ease-in-out infinite; }
+
+/* Sidebar active state */
+.sidebar-item { transition: all 0.2s ease; }
+.sidebar-item:hover { background: rgba(74, 222, 128, 0.12); }
+.sidebar-item.active {
+  background: rgba(74, 222, 128, 0.18);
+  border-left: 3px solid #4ade80;
+}
+
+/* Card hover */
+.stat-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease, border-color 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* Dark card overrides — plain CSS, no Tailwind magic needed */
+.dark .stat-card {
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+.dark .stat-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+
+/* Donut chart (CSS-only) */
+.donut-ring {
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* ── Dashboard surface colours in dark mode ────────────────────────────────── */
+.dark .dashboard-bg {
+  background: #111827 !important;
+}
+
+/* White cards → dark surface */
+.dark [class*="bg-white"] {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* Light grey surfaces → darker grey */
+.dark [class*="bg-gray-50"] {
+  background-color: #1f2937 !important;
+}
+.dark [class*="bg-gray-100"] {
+  background-color: #374151 !important;
+}
+
+/* Text colours */
+.dark [class*="text-gray-800"] { color: #f3f4f6 !important; }
+.dark [class*="text-gray-700"] { color: #e5e7eb !important; }
+.dark [class*="text-gray-600"] { color: #d1d5db !important; }
+.dark [class*="text-gray-500"] { color: #9ca3af !important; }
+.dark [class*="text-gray-400"] { color: #6b7280 !important; }
+
+/* Border colours */
+.dark [class*="border-gray-100"] { border-color: #374151 !important; }
+.dark [class*="border-gray-200"] { border-color: #4b5563 !important; }
+
+/* Main content area */
+.dark main { background: #111827; }
+
+/* Hide Next.js development indicators / overlays */
+[data-nextjs-dev-overlay],
+nextjs-portal { display: none !important; }
+
+/* Toast slide-in animation (used by auth page Toast component) */
+@keyframes slide-in {
+  from { opacity: 0; transform: translateX(60px) scale(0.95); }
+  to   { opacity: 1; transform: translateX(0)    scale(1); }
+}
+.animate-slide-in { animation: slide-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards; }

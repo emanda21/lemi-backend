@@ -1,0 +1,47 @@
+# ── Backend (separate repo — deployed independently to Render) ────────────────
+# The /backend directory has its own .git folder. It is NOT part of this
+# Next.js frontend repo. Exclude it to prevent embedded-submodule warnings.
+backend/
+
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── Next.js build output ──────────────────────────────────────────────────────
+.next/
+out/
+build/
+
+# ── Production ────────────────────────────────────────────────────────────────
+dist/
+
+# ── Environment variables — NEVER commit these ────────────────────────────────
+# They contain real secrets (API keys, DB passwords, JWT secrets).
+# Set them in Vercel Dashboard → Project Settings → Environment Variables.
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+# ── Vercel ────────────────────────────────────────────────────────────────────
+.vercel
+
+# ── Debug logs ────────────────────────────────────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ── OS / Editor ───────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.pem
+
+# ── TypeScript ────────────────────────────────────────────────────────────────
+*.tsbuildinfo
+next-env.d.ts

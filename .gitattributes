@@ -1,0 +1,43 @@
+# .gitattributes
+# Normalize line endings so LF/CRLF warnings never appear again.
+# Git will store all text files with LF in the repo, and convert
+# to the OS native line ending on checkout (CRLF on Windows, LF on Linux/macOS).
+
+# ── Default: auto-detect text files and normalise to LF in repo ──────────────
+* text=auto eol=lf
+
+# ── Explicitly text ───────────────────────────────────────────────────────────
+*.js      text eol=lf
+*.jsx     text eol=lf
+*.ts      text eol=lf
+*.tsx     text eol=lf
+*.mjs     text eol=lf
+*.cjs     text eol=lf
+*.json    text eol=lf
+*.css     text eol=lf
+*.html    text eol=lf
+*.md      text eol=lf
+*.mdx     text eol=lf
+*.svg     text eol=lf
+*.txt     text eol=lf
+*.env     text eol=lf
+*.sh      text eol=lf
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.toml    text eol=lf
+*.gitignore text eol=lf
+
+# ── Explicitly binary (no line-ending conversion) ─────────────────────────────
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.webp  binary
+*.woff  binary
+*.woff2 binary
+*.ttf   binary
+*.otf   binary
+*.pdf   binary
+*.docx  binary
+*.zip   binary
