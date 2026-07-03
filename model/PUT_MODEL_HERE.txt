@@ -1,0 +1,6 @@
+# Place your model file here:
+#   backend/model/lemi_lite0_web_model.h5
+#
+# This directory is intentionally kept in version control (via this file).
+# The .h5 binary is excluded from git — add the line below to .gitignore:
+#   backend/model/*.h5

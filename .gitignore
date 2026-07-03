@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # ── Backend (separate repo — deployed independently to Render) ────────────────
 # The /backend directory has its own .git folder. It is NOT part of this
 # Next.js frontend repo. Exclude it to prevent embedded-submodule warnings.
@@ -45,3 +46,10 @@ Thumbs.db
 # ── TypeScript ────────────────────────────────────────────────────────────────
 *.tsbuildinfo
 next-env.d.ts
+=======
+__pycache__/
+*.pyc
+.env
+venv/
+.venv/
+>>>>>>> 5e4691b30b8d1b287a446a2f20df4ecdb8029e32
